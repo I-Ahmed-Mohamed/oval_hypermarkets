@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#07111f" />
+    <meta
+      name="description"
+      content="دليل بسيط ومرتب لفروع الهايبر ماركت مع بحث سريع وفتح مباشر للفرع."
+    />
+    <title>OVAL Branches Hub | دليل الفروع</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page-glow glow-a"></div>
+    <div class="page-glow glow-b"></div>
+
+    <header class="app-header" id="top">
+      <nav class="nav-shell">
+        <a class="brand" href="#top" aria-label="الصفحة الرئيسية">
+          <img src="assets/logo.jpeg" alt="OVAL logo" />
+          <span>
+            <strong>OVAL Branches Hub</strong>
+            <small>دليل الفروع</small>
+          </span>
+        </a>
+
+        <div class="nav-actions">
+          <button class="icon-btn" id="themeToggle" type="button" title="تغيير الوضع">☾</button>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero-section reveal">
+        <div class="hero-copy">
+          <span class="eyebrow">دليل سريع ومرتب</span>
+          <h1>كل الفروع في مكان واحد</h1>
+          <p>ابحث باسم الشركة أو الفرع وافتح اللوكيشن مباشرة.</p>
+
+          <div class="hero-actions">
+            <a href="#directory" class="primary-btn">ابدأ البحث</a>
+          </div>
+
+          <div class="mini-stats" aria-label="ملخص سريع">
+            <div class="mini-stat">
+              <strong id="totalCompanies">0</strong>
+              <span>شركة</span>
+            </div>
+            <div class="mini-stat">
+              <strong id="totalBranches">0</strong>
+              <span>فرع</span>
+            </div>
+            <div class="mini-stat accent">
+              <strong id="shownBranches">0</strong>
+              <span>نتيجة ظاهرة</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="toolbar reveal" id="directory">
+        <div class="search-box">
+          <span>⌕</span>
+          <input id="searchInput" type="search" placeholder="ابحث باسم الشركة أو الفرع..." autocomplete="off" />
+          <button id="clearSearch" type="button" title="مسح البحث">×</button>
+        </div>
+
+        <div class="toolbar-bottom">
+          <div class="filter-row">
+            <button class="chip active" data-filter="all" type="button">الكل</button>
+            <button class="chip" data-filter="favorites" type="button">المفضلة</button>
+            <button class="chip" data-filter="recent" type="button">آخر فتح</button>
+          </div>
+          <p class="toolbar-note" id="smartHint">اكتب في البحث وستظهر النتائج فورًا.</p>
+        </div>
+      </section>
+
+      <section class="directory-grid" id="companiesGrid" aria-label="قائمة الشركات"></section>
+
+      <section class="empty-state" id="emptyState" hidden>
+        <strong>مفيش نتائج</strong>
+        <p>جرّب اسم شركة أو منطقة تانية.</p>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <span>OVAL Foods</span>
+      <span>دليل بسيط وسريع للفروع.</span>
+    </footer>
+
+    <button class="back-top" id="backTop" type="button" aria-label="الرجوع للأعلى">↑</button>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
