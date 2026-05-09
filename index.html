@@ -1,101 +1,86 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#07111f" />
-    <meta
-      name="description"
-      content="دليل بسيط ومرتب لفروع الهايبر ماركت مع بحث سريع وفتح مباشر للفرع."
-    />
-    <title>OVAL Branches Hub | دليل الفروع</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="page-glow glow-a"></div>
-    <div class="page-glow glow-b"></div>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>دليل لوكيشنات المناديب</title>
+  <meta name="description" content="دليل سريع للمناديب للبحث عن الفروع وفتح اللوكيشن مباشرة." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
 
-    <header class="app-header" id="top">
-      <nav class="nav-shell">
-        <a class="brand" href="#top" aria-label="الصفحة الرئيسية">
-          <img src="assets/logo.jpeg" alt="OVAL logo" />
-          <span>
-            <strong>OVAL Branches Hub</strong>
-            <small>دليل الفروع</small>
-          </span>
-        </a>
+<body>
+  <div class="bg"></div>
 
-        <div class="nav-actions">
-          <button class="icon-btn" id="themeToggle" type="button" title="تغيير الوضع">☾</button>
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo">📍</span>
+      <div>
+        <strong>دليل اللوكيشنات</strong>
+        <small>للمندوبين</small>
+      </div>
+    </div>
+
+    <button class="theme-btn" id="themeBtn" type="button">☾</button>
+  </header>
+
+  <main class="app">
+    <section class="hero">
+      <div>
+        <span class="pill">فتح اللوكيشن بضغطة</span>
+        <h1>كل الفروع قدام المندوب بسرعة</h1>
+        <p>ابحث باسم العميل أو الفرع أو الكود أو المنطقة، وافتح Google Maps مباشرة.</p>
+      </div>
+
+      <div class="stats">
+        <div>
+          <strong id="companyCount">0</strong>
+          <span>عميل</span>
         </div>
-      </nav>
-    </header>
-
-    <main>
-      <section class="hero-section reveal">
-        <div class="hero-copy">
-          <span class="eyebrow">دليل سريع ومرتب</span>
-          <h1>كل الفروع في مكان واحد</h1>
-          <p>ابحث باسم الشركة أو الفرع وافتح اللوكيشن مباشرة.</p>
-
-          <div class="hero-actions">
-            <a href="#directory" class="primary-btn">ابدأ البحث</a>
-          </div>
-
-          <div class="mini-stats" aria-label="ملخص سريع">
-            <div class="mini-stat">
-              <strong id="totalCompanies">0</strong>
-              <span>شركة</span>
-            </div>
-            <div class="mini-stat">
-              <strong id="totalBranches">0</strong>
-              <span>فرع</span>
-            </div>
-            <div class="mini-stat accent">
-              <strong id="shownBranches">0</strong>
-              <span>نتيجة ظاهرة</span>
-            </div>
-          </div>
+        <div>
+          <strong id="branchCount">0</strong>
+          <span>فرع</span>
         </div>
-      </section>
-
-      <section class="toolbar reveal" id="directory">
-        <div class="search-box">
-          <span>⌕</span>
-          <input id="searchInput" type="search" placeholder="ابحث باسم الشركة أو الفرع..." autocomplete="off" />
-          <button id="clearSearch" type="button" title="مسح البحث">×</button>
+        <div>
+          <strong id="resultCount">0</strong>
+          <span>نتيجة</span>
         </div>
+      </div>
+    </section>
 
-        <div class="toolbar-bottom">
-          <div class="filter-row">
-            <button class="chip active" data-filter="all" type="button">الكل</button>
-            <button class="chip" data-filter="favorites" type="button">المفضلة</button>
-            <button class="chip" data-filter="recent" type="button">آخر فتح</button>
-          </div>
-          <p class="toolbar-note" id="smartHint">اكتب في البحث وستظهر النتائج فورًا.</p>
-        </div>
-      </section>
+    <section class="search-card">
+      <div class="search-box">
+        <span>⌕</span>
+        <input id="searchInput" type="search" placeholder="ابحث: أمازون، AZ001، كازيون، التجمع..." autocomplete="off">
+        <button id="clearBtn" type="button">مسح</button>
+      </div>
 
-      <section class="directory-grid" id="companiesGrid" aria-label="قائمة الشركات"></section>
+      <div class="quick-filters" id="quickFilters">
+        <button class="active" data-filter="all" type="button">الكل</button>
+        <button data-filter="recent" type="button">آخر فتح</button>
+        <button data-filter="favorites" type="button">المفضلة</button>
+      </div>
+    </section>
 
-      <section class="empty-state" id="emptyState" hidden>
-        <strong>مفيش نتائج</strong>
-        <p>جرّب اسم شركة أو منطقة تانية.</p>
-      </section>
-    </main>
+    <section class="tools-row">
+      <button id="copySummary" type="button">نسخ ملخص</button>
+      <button id="openAllVisible" type="button">أول نتيجة</button>
+      <button id="resetData" type="button">إظهار الكل</button>
+    </section>
 
-    <footer class="app-footer">
-      <span>OVAL Foods</span>
-      <span>دليل بسيط وسريع للفروع.</span>
-    </footer>
+    <section class="companies" id="companies"></section>
 
-    <button class="back-top" id="backTop" type="button" aria-label="الرجوع للأعلى">↑</button>
+    <section class="empty" id="empty" hidden>
+      <strong>مفيش نتائج</strong>
+      <p>جرّب اسم فرع أو كود أو منطقة تانية.</p>
+    </section>
+  </main>
 
-    <div class="toast" id="toast" role="status" aria-live="polite"></div>
-    <script src="data.js"></script>
-    <script src="app.js"></script>
-  </body>
+  <div class="toast" id="toast"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
 </html>
