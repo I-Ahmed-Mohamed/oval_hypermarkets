@@ -250,3 +250,15 @@ $("#themeBtn").addEventListener("click", () => {
 
 buildClientFilters();
 render();
+
+const imageModal = $("#imageModal");
+const devImgBtn = $("#devImgBtn");
+const closeModalBtn = $("#closeModalBtn");
+
+if (devImgBtn && imageModal && closeModalBtn) {
+  devImgBtn.addEventListener("click", () => imageModal.classList.add("show"));
+  closeModalBtn.addEventListener("click", () => imageModal.classList.remove("show"));
+  imageModal.addEventListener("click", (e) => {
+    if (e.target === imageModal) imageModal.classList.remove("show");
+  });
+}

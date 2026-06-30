@@ -29,9 +29,9 @@
   <main class="app">
     <section class="hero">
       <div class="developer-badge">
-        <a href="imag/Ahmed.jpeg" target="_blank" title="عرض الصورة">
+        <button id="devImgBtn" type="button" class="dev-img-btn" title="عرض الصورة">
           <img src="imag/Ahmed.jpeg" alt="Eng. Ahmed Mohamed" class="dev-img">
-        </a>
+        </button>
         <span>تم التطوير بواسطة <strong>المهندس أحمد محمد</strong></span>
       </div>
       <div>
@@ -84,6 +84,11 @@
     </section>
   </main>
 
+
+  <div class="image-modal" id="imageModal">
+    <button class="close-modal" id="closeModalBtn" type="button">&times;</button>
+    <img src="imag/Ahmed.jpeg" alt="Eng. Ahmed Mohamed">
+  </div>
 
   <div class="toast" id="toast"></div>
 
