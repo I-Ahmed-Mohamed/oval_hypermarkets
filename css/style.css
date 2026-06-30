@@ -177,13 +177,28 @@ h1{
   min-height:40px;
   padding:0 14px;
   transition:.2s ease;
+  white-space:nowrap;
+  flex-shrink:0;
 }
 .search-box button{background:var(--accent);color:#07131f;border-color:transparent}
 .quick-filters{
   display:flex;
-  flex-wrap:wrap;
+  overflow-x:auto;
   gap:8px;
   margin-top:12px;
+  padding-bottom:8px;
+  scrollbar-width:thin;
+  scrollbar-color:var(--line) transparent;
+}
+.quick-filters::-webkit-scrollbar {
+  height: 6px;
+}
+.quick-filters::-webkit-scrollbar-track {
+  background: transparent;
+}
+.quick-filters::-webkit-scrollbar-thumb {
+  background-color: var(--line);
+  border-radius: 10px;
 }
 .quick-filters button.active{
   background:linear-gradient(135deg,rgba(53,208,138,.22),rgba(54,183,255,.18));
@@ -389,8 +404,6 @@ mark{
   .stats strong{font-size:22px}
   .search-box{grid-template-columns:auto 1fr;min-height:54px}
   .search-box button{grid-column:1/-1;width:100%}
-  .quick-filters{display:grid;grid-template-columns:repeat(2,1fr)}
-  .quick-filters button{padding:0 8px}
   .branch{grid-template-columns:1fr}
   .branch-actions{display:grid;grid-template-columns:1fr 38px 38px}
   .map-btn{width:100%}

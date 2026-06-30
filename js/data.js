@@ -99,6 +99,12 @@ const LOCATIONS_DATA = [
         "name": "امازون شبرا الخيمة",
         "area": "4766+5QQ Shubra El Kheima",
         "map": "https://maps.app.goo.gl/YyWUZ9EBB6LXNEtB7"
+      },
+      {
+        "code": "QCD5",
+        "name": "امازون QCD5",
+        "area": "",
+        "map": "https://maps.app.goo.gl/wyd6XiVhtrRZ4yyAA"
       }
     ]
   },
