@@ -212,30 +212,7 @@ document.addEventListener("click", async e => {
   }
 });
 
-$("#copySummary").addEventListener("click", async () => {
-  const data = getFiltered();
-  const lines = [];
-  data.forEach(c => c.branches.forEach(b => {
-    lines.push(`${c.client} | ${b.name} | ${b.code} | ${b.area} | ${b.map}`);
-  }));
-  await navigator.clipboard.writeText(lines.join("\n"));
-  toast("تم نسخ النتائج الظاهرة");
-});
 
-$("#openAllVisible").addEventListener("click", () => {
-  const data = getFiltered();
-  const first = data[0]?.branches[0];
-  if(!first) return toast("مفيش نتيجة");
-  window.open(first.map, "_blank", "noopener");
-});
-
-$("#resetData").addEventListener("click", () => {
-  state.filter = "all";
-  state.query = "";
-  input.value = "";
-  document.querySelectorAll("#quickFilters button").forEach(b => b.classList.toggle("active", b.dataset.filter === "all"));
-  render();
-});
 
 const savedTheme = localStorage.getItem("mandoub_theme") || "dark";
 document.documentElement.dataset.theme = savedTheme;

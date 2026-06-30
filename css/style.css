@@ -166,8 +166,7 @@ h1{
   font-size:16px;
 }
 .search-box button,
-.quick-filters button,
-.tools-row button{
+.quick-filters button{
   border:0;
   border-radius:14px;
   background:var(--card);
@@ -205,13 +204,6 @@ h1{
   border-color:rgba(53,208,138,.42);
   color:var(--accent);
 }
-.tools-row{
-  display:flex;
-  gap:8px;
-  flex-wrap:wrap;
-  margin:12px 0 18px;
-}
-.tools-row button:hover,
 .quick-filters button:hover{
   transform:translateY(-1px);
 }
