@@ -393,6 +393,7 @@ mark{
 .developer-badge {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 12px;
   grid-column: 1 / -1;
   margin-bottom: 12px;
@@ -400,7 +401,6 @@ mark{
   background: var(--card2);
   border: 1px solid var(--line);
   border-radius: 999px;
-  width: fit-content;
 }
 .developer-badge span {
   font-size: 14px;
