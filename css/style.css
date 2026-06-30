@@ -390,29 +390,40 @@ mark{
 }
 .toast.show{opacity:1;transform:none}
 
-.developer-footer {
-  text-align: center;
-  padding: 20px 14px 40px;
-  color: var(--muted);
+.developer-badge {
   display: flex;
-  flex-direction: column;
   align-items: center;
   gap: 12px;
+  grid-column: 1 / -1;
+  margin-bottom: 12px;
+  padding: 6px 14px 6px 6px;
+  background: var(--card2);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  width: fit-content;
 }
-.developer-footer p {
-  margin: 0;
-  font-size: 15px;
+.developer-badge span {
+  font-size: 14px;
+  color: var(--muted);
 }
-.developer-footer strong {
+.developer-badge strong {
   color: var(--text);
   font-weight: 800;
 }
+.developer-badge a {
+  display: flex;
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+}
+.developer-badge a:hover {
+  transform: scale(1.1);
+}
 .dev-img {
-  width: 60px;
-  height: 60px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid var(--accent);
+  border: 1px solid var(--accent);
   box-shadow: var(--shadow);
 }
 
