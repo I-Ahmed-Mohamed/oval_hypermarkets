@@ -224,7 +224,7 @@ const LOCATIONS_DATA = [
         "code": "02-019",
         "name": "سوبيكو بشتيل",
         "area": "",
-        "map": "https://maps.app.goo.gl/JPN19Jgc8mUpAeXx8"
+        "map": "https://maps.app.goo.gl/sPmqhvK5GpQbjhP69"
       },
       {
         "code": "02-020",
