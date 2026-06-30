@@ -390,6 +390,32 @@ mark{
 }
 .toast.show{opacity:1;transform:none}
 
+.developer-footer {
+  text-align: center;
+  padding: 20px 14px 40px;
+  color: var(--muted);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.developer-footer p {
+  margin: 0;
+  font-size: 15px;
+}
+.developer-footer strong {
+  color: var(--text);
+  font-weight: 800;
+}
+.dev-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--accent);
+  box-shadow: var(--shadow);
+}
+
 @media(max-width:850px){
   .hero{grid-template-columns:1fr}
   .stats{grid-template-columns:repeat(3,1fr)}
