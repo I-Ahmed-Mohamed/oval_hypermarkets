@@ -185,6 +185,7 @@ h1{
   overflow-x:auto;
   gap:14px;
   margin-top:16px;
+  margin-bottom:24px;
   padding-bottom:14px;
   scrollbar-width:thin;
   scrollbar-color:var(--line) transparent;
