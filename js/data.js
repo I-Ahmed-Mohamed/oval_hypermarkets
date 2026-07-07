@@ -152,7 +152,7 @@ const LOCATIONS_DATA = [
         "code": "02-007",
         "name": "سوبيكو حلوان",
         "area": "",
-        "map": "https://maps.app.goo.gl/coa3B3wpyCmjRy3C9"
+        "map": "https://share.google/oTpyMyS575jQD72J5"
       },
       {
         "code": "02-008",
