@@ -105,6 +105,12 @@ const LOCATIONS_DATA = [
         "name": "امازون QCD5",
         "area": "",
         "map": "https://maps.app.goo.gl/wyd6XiVhtrRZ4yyAA"
+      },
+      {
+        "code": "QCC2",
+        "name": "امازون جولدن سكوير",
+        "area": "",
+        "map": "https://maps.app.goo.gl/DAknTqwzQQmgaLDZ8?g_st=ic"
       }
     ]
   },
