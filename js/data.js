@@ -102,15 +102,21 @@ const LOCATIONS_DATA = [
       },
       {
         "code": "QCD5",
-        "name": "امازون QCD5",
+        "name": "امازون حدائق اكتوبر",
         "area": "",
-        "map": "https://maps.app.goo.gl/wyd6XiVhtrRZ4yyAA"
+        "map": "https://maps.app.goo.gl/6BkywTNn4SwtCtVu5?g_st=ic"
       },
       {
         "code": "QCC2",
         "name": "امازون جولدن سكوير",
         "area": "",
         "map": "https://maps.app.goo.gl/DAknTqwzQQmgaLDZ8?g_st=ic"
+      },
+      {
+        "code": "QCD1",
+        "name": "امازون المندرة",
+        "area": "أسكندرية",
+        "map": "https://maps.app.goo.gl/TqW8nR941NsfNnwL8"
       }
     ]
   },
