@@ -141,7 +141,7 @@ h1{
 }
 .search-box{
   display:grid;
-  grid-template-columns:auto 1fr auto;
+  grid-template-columns:auto 1fr;
   align-items:center;
   gap:10px;
   min-height:58px;
@@ -165,7 +165,6 @@ h1{
   font-weight:800;
   font-size:16px;
 }
-.search-box button,
 .quick-filters button{
   border:0;
   border-radius:14px;
@@ -179,7 +178,7 @@ h1{
   white-space:nowrap;
   flex-shrink:0;
 }
-.search-box button{background:var(--accent);color:#07131f;border-color:transparent}
+
 .quick-filters{
   display:flex;
   overflow-x:auto;
@@ -491,7 +490,7 @@ mark{
   .stats div{padding:12px 8px}
   .stats strong{font-size:22px}
   .search-box{grid-template-columns:auto 1fr;min-height:54px}
-  .search-box button{grid-column:1/-1;width:100%}
+
   .branch{grid-template-columns:1fr}
   .branch-actions{display:grid;grid-template-columns:1fr 38px 38px}
   .map-btn{width:100%}

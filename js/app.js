@@ -157,12 +157,7 @@ input.addEventListener("input", e => {
   render();
 });
 
-$("#clearBtn").addEventListener("click", () => {
-  input.value = "";
-  state.query = "";
-  render();
-  input.focus();
-});
+
 
 $("#quickFilters").addEventListener("click", e => {
   const btn = e.target.closest("button[data-filter]");
