@@ -723,6 +723,12 @@ const LOCATIONS_DATA = [
         "name": "الفار التسعين الجنوبي",
         "area": "",
         "map": "https://share.google/U65CAZWMx2Pl6k9OB "
+      },
+      {
+        "code": "09-011",
+        "name": "الفار الساحل",
+        "area": "الساحل الشمالي",
+        "map": "https://maps.app.goo.gl/777RSHLGgf6Ljz1K6?g_st=iw"
       }
     ]
   },
