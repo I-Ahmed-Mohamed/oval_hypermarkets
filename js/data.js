@@ -446,7 +446,7 @@ const LOCATIONS_DATA = [
         "code": "06-011",
         "name": "كارفور 15 مايو",
         "area": "",
-        "map": "https://maps.app.goo.gl/YEjjRgDESY5Z8sTi7?g_st=ic "
+        "map": "https://maps.app.goo.gl/Qux7DZubWLdAdC5P6"
       },
       {
         "code": "06-012",
