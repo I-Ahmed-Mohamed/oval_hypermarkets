@@ -609,6 +609,12 @@ const LOCATIONS_DATA = [
         "name": "سبينس طنطا",
         "area": "",
         "map": "https://maps.apple/p/VQH1P1fLt_y.bV"
+      },
+      {
+        "code": "07-019",
+        "name": "سبينس مارينا",
+        "area": "",
+        "map": "https://maps.app.goo.gl/JbrwSCZUJcsR9CbQA"
       }
     ]
   },
@@ -645,6 +651,12 @@ const LOCATIONS_DATA = [
         "name": "أوسكار ايتابا",
         "area": "",
         "map": "https://maps.app.goo.gl/cZ3Ko98UuaZRHnes8?g_st=aw"
+      },
+      {
+        "code": "08-006",
+        "name": "أوسكار الساحل",
+        "area": "",
+        "map": "https://maps.app.goo.gl/d8cFNfRUx3AB63yTA"
       }
     ]
   },
