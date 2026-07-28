@@ -117,6 +117,12 @@ const LOCATIONS_DATA = [
         "name": "امازون المندرة",
         "area": "أسكندرية",
         "map": "https://maps.app.goo.gl/TqW8nR941NsfNnwL8"
+      },
+      {
+        "code": "QCA9",
+        "name": "امازون بالم هيلز",
+        "area": "",
+        "map": "https://maps.app.goo.gl/NVavKSHffgZHGqNCA?g_st=ic"
       }
     ]
   },
