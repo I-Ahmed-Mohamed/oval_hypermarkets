@@ -10,6 +10,7 @@ const $ = (s) => document.querySelector(s);
 const companiesEl = $("#companies");
 const emptyEl = $("#empty");
 const input = $("#searchInput");
+const scrollTopBtn = $("#scrollTopBtn");
 
 function buildClientFilters(){
   const box = $("#quickFilters");
@@ -63,12 +64,16 @@ function highlight(text){
 
 function getFiltered(){
   const q = normalize(state.query);
+  const terms = q ? q.split(/\s+/) : [];
 
-  return LOCATIONS_DATA.map(company => {
+  const results = LOCATIONS_DATA.map(company => {
     let branches = company.branches.filter(branch => {
       const key = keyOf(company.client, branch);
       const text = normalize([company.client, company.type, branch.code, branch.name, branch.area].join(" "));
-      const matchesQuery = !q || text.includes(q);
+      
+      // Smart matching: every term must be included in the text
+      const matchesQuery = !q || terms.every(term => text.includes(term));
+      
       const matchesFilter =
         state.filter === "all" ||
         state.filter === company.type ||
@@ -78,13 +83,16 @@ function getFiltered(){
       return matchesQuery && matchesFilter;
     });
 
-    const companyMatches = q && normalize(company.client).includes(q);
+    const companyMatches = q && terms.every(term => normalize(company.client).includes(term));
     if(companyMatches && (state.filter === "all" || state.filter === company.type)){
       branches = company.branches;
     }
 
     return { ...company, branches };
   }).filter(c => c.branches.length);
+  
+  // Sort by number of branches to show smaller/exact matches first (optional smart sort)
+  return results.sort((a, b) => a.branches.length - b.branches.length);
 }
 
 function render(){
@@ -98,11 +106,12 @@ function render(){
   $("#resultCount").textContent = resultBranches;
   emptyEl.hidden = data.length > 0;
 
-  companiesEl.innerHTML = data.map(company => {
+  companiesEl.innerHTML = data.map((company, index) => {
     const isOpen = state.query || state.opened.has(company.client) || state.filter !== "all";
     const initial = company.client.slice(0,1);
+    const delay = index * 0.05;
     return `
-      <article class="company-card ${isOpen ? "open" : ""}">
+      <article class="company-card ${isOpen ? "open" : ""}" style="animation-delay: ${delay}s">
         <button class="company-head" type="button" data-toggle="${company.client}">
           <span class="company-title">
             <span class="company-icon">${initial}</span>
@@ -232,5 +241,19 @@ if (devImgBtn && imageModal && closeModalBtn) {
   closeModalBtn.addEventListener("click", () => imageModal.classList.remove("show"));
   imageModal.addEventListener("click", (e) => {
     if (e.target === imageModal) imageModal.classList.remove("show");
+  });
+}
+
+if (scrollTopBtn) {
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      scrollTopBtn.classList.add("show");
+    } else {
+      scrollTopBtn.classList.remove("show");
+    }
+  });
+
+  scrollTopBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
   });
 }
