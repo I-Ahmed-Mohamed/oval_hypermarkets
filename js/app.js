@@ -91,8 +91,8 @@ function getFiltered(){
     return { ...company, branches };
   }).filter(c => c.branches.length);
   
-  // Sort by number of branches to show smaller/exact matches first (optional smart sort)
-  return results.sort((a, b) => a.branches.length - b.branches.length);
+  // Sort by number of branches descending (most branches first)
+  return results.sort((a, b) => b.branches.length - a.branches.length);
 }
 
 function render(){
