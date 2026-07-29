@@ -292,12 +292,82 @@ a{color:inherit;text-decoration:none}
   font-weight:900;
   white-space:nowrap;
 }
-.branch-list{
-  display:none;
-  padding:0 20px 20px;
-  gap:12px;
+.bottom-sheet-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
 }
-.company-card.open .branch-list{display:grid}
+.bottom-sheet-overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+.bottom-sheet {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 600px;
+  background: var(--bg);
+  border-radius: 24px 24px 0 0;
+  border: 1px solid var(--line);
+  border-bottom: none;
+  box-shadow: 0 -10px 40px rgba(0,0,0,0.3);
+  transform: translateY(100%);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  max-height: 85vh;
+}
+.bottom-sheet-overlay.show .bottom-sheet {
+  transform: translateY(0);
+}
+.bottom-sheet-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px;
+  border-bottom: 1px solid var(--line);
+  background: var(--card2);
+  border-radius: 24px 24px 0 0;
+}
+.bottom-sheet-header h3 {
+  margin: 0;
+  font-size: 20px;
+  color: var(--accent);
+}
+.close-sheet-btn {
+  background: var(--card);
+  border: 1px solid var(--line);
+  color: var(--text);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 24px;
+  display: grid;
+  place-items: center;
+  transition: 0.2s;
+  line-height: 1;
+}
+.close-sheet-btn:hover {
+  background: var(--line);
+}
+.bottom-sheet-content {
+  padding: 24px;
+  overflow-y: auto;
+  display: grid;
+  gap: 12px;
+}
+/* Allow scrolling on body to be blocked when sheet is open */
+body.modal-open {
+  overflow: hidden;
+}
 .branch{
   display:grid;
   grid-template-columns:1fr auto;

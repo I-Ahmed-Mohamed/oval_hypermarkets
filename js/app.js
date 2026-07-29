@@ -107,11 +107,10 @@ function render(){
   emptyEl.hidden = data.length > 0;
 
   companiesEl.innerHTML = data.map((company, index) => {
-    const isOpen = state.query || state.opened.has(company.client) || state.filter !== "all";
     const initial = company.client.slice(0,1);
     const delay = index * 0.05;
     return `
-      <article class="company-card ${isOpen ? "open" : ""}" style="animation-delay: ${delay}s">
+      <article class="company-card" style="animation-delay: ${delay}s">
         <button class="company-head" type="button" data-toggle="${company.client}">
           <span class="company-title">
             <span class="company-icon">${initial}</span>
@@ -122,40 +121,6 @@ function render(){
           </span>
           <span class="count">${company.branches.length} فرع ⌄</span>
         </button>
-
-        <div class="branch-list">
-          ${company.branches.map(branch => {
-            const key = keyOf(company.client, branch);
-            const fav = state.favorites.has(key);
-            return `
-              <div class="branch">
-                <div class="branch-info">
-                  <div class="branch-name">
-                    <span>${highlight(branch.name)}</span>
-                    <b class="branch-code">${highlight(branch.code)}</b>
-                  </div>
-                  <div class="branch-meta">
-                    <span>${highlight(branch.area)}</span>
-                    <span>${highlight(company.client)}</span>
-                  </div>
-                </div>
-                <div class="branch-actions">
-                  <a class="map-btn" href="${branch.map || "#"}" target="_blank" rel="noopener"
-                    data-map="1"
-                    data-key="${key}"
-                    data-client="${company.client}"
-                    data-name="${branch.name}"
-                    data-code="${branch.code}"
-                    data-area="${branch.area}"
-                    data-url="${branch.map}">افتح اللوكيشن</a>
-                  <button class="copy-btn" type="button"
-                    data-copy="${branch.name} | ${branch.code} | ${branch.area} | ${branch.map}">⧉</button>
-                  <button class="fav-btn ${fav ? "active" : ""}" type="button" data-fav="${key}">★</button>
-                </div>
-              </div>
-            `;
-          }).join("")}
-        </div>
       </article>
     `;
   }).join("");
@@ -177,12 +142,70 @@ $("#quickFilters").addEventListener("click", e => {
   render();
 });
 
+const bottomSheetOverlay = $("#bottomSheetOverlay");
+const bottomSheetContent = $("#bottomSheetContent");
+const bottomSheetTitle = $("#bottomSheetTitle");
+const closeSheetBtn = $("#closeSheetBtn");
+
+function openBottomSheet(clientName) {
+  const data = getFiltered();
+  const company = data.find(c => c.client === clientName);
+  
+  if(!company) return;
+  
+  bottomSheetTitle.textContent = company.client;
+  
+  bottomSheetContent.innerHTML = `
+    <div class="branch-list-container">
+      ${company.branches.map(branch => {
+        const key = keyOf(company.client, branch);
+        const fav = state.favorites.has(key);
+        return `
+          <div class="branch">
+            <div class="branch-info">
+              <div class="branch-name">
+                <span>${highlight(branch.name)}</span>
+                <b class="branch-code">${highlight(branch.code)}</b>
+              </div>
+              <div class="branch-meta">
+                <span>${highlight(branch.area)}</span>
+                <span>${highlight(company.client)}</span>
+              </div>
+            </div>
+            <div class="branch-actions">
+              <a class="map-btn" href="${branch.map || "#"}" target="_blank" rel="noopener"
+                data-map="1" data-key="${key}" data-client="${company.client}"
+                data-name="${branch.name}" data-code="${branch.code}"
+                data-area="${branch.area}" data-url="${branch.map}">افتح اللوكيشن</a>
+              <button class="copy-btn" type="button"
+                data-copy="${branch.name} | ${branch.code} | ${branch.area} | ${branch.map}">⧉</button>
+              <button class="fav-btn ${fav ? "active" : ""}" type="button" data-fav="${key}">★</button>
+            </div>
+          </div>
+        `;
+      }).join("")}
+    </div>
+  `;
+  
+  bottomSheetOverlay.classList.add("show");
+  document.body.classList.add("modal-open");
+}
+
+function closeBottomSheet() {
+  bottomSheetOverlay.classList.remove("show");
+  document.body.classList.remove("modal-open");
+}
+
+closeSheetBtn.addEventListener("click", closeBottomSheet);
+bottomSheetOverlay.addEventListener("click", e => {
+  if(e.target === bottomSheetOverlay) closeBottomSheet();
+});
+
 document.addEventListener("click", async e => {
   const toggle = e.target.closest("[data-toggle]");
   if(toggle){
     const client = toggle.dataset.toggle;
-    state.opened.has(client) ? state.opened.delete(client) : state.opened.add(client);
-    render();
+    openBottomSheet(client);
     return;
   }
 
@@ -191,6 +214,7 @@ document.addEventListener("click", async e => {
     const key = fav.dataset.fav;
     state.favorites.has(key) ? state.favorites.delete(key) : state.favorites.add(key);
     saveFavorites();
+    fav.classList.toggle("active");
     render();
     toast(state.favorites.has(key) ? "اتضاف للمفضلة" : "اتشال من المفضلة");
     return;
