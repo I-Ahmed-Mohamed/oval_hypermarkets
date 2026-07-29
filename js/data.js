@@ -123,6 +123,24 @@ const LOCATIONS_DATA = [
         "name": "امازون بالم هيلز",
         "area": "",
         "map": "https://maps.app.goo.gl/NVavKSHffgZHGqNCA?g_st=ic"
+      },
+      {
+        "code": "QCE2",
+        "name": "امازون سيزر باي",
+        "area": "Ceaser Bay",
+        "map": "https://maps.google.com/?q=31.07191,28.06001"
+      },
+      {
+        "code": "QCD8",
+        "name": "امازون مارينا",
+        "area": "Marina",
+        "map": "https://maps.google.com/?q=30.82713,28.98213"
+      },
+      {
+        "code": "QCD9",
+        "name": "امازون جرين بيتش",
+        "area": "Green Beach",
+        "map": "https://maps.google.com/?q=30.81322,29.10305"
       }
     ]
   },
