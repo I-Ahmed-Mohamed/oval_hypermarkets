@@ -141,6 +141,72 @@ const LOCATIONS_DATA = [
         "name": "امازون جرين بيتش",
         "area": "Green Beach",
         "map": "https://maps.google.com/?q=30.81322,29.10305"
+      },
+      {
+        "code": "QCC4",
+        "name": "امازون المقطم",
+        "area": "Mokkatam",
+        "map": "https://www.google.com/maps?q=30.009719580327136,31.29543074504855"
+      },
+      {
+        "code": "QCC1",
+        "name": "امازون جاردينيا مدينة نصر",
+        "area": "Gardenia Nasr City",
+        "map": "https://www.google.com/maps?q=30.069075,31.387645"
+      },
+      {
+        "code": "QCD6",
+        "name": "امازون الطالبية",
+        "area": "El Talbia, Giza",
+        "map": "https://www.google.com/maps?q=29.9846231,31.1540974"
+      },
+      {
+        "code": "QCC7",
+        "name": "امازون الهرم",
+        "area": "Al Haram",
+        "map": "https://www.google.com/maps?q=30.006323225705373,31.196605305692973"
+      },
+      {
+        "code": "QCD2",
+        "name": "امازون سموحة",
+        "area": "Smouha, Alexandria",
+        "map": ""
+      },
+      {
+        "code": "QCG4",
+        "name": "امازون ميجا فلورنس مول",
+        "area": "Alexandria, Mega Florence Mall",
+        "map": "https://maps.app.goo.gl/suMpogCbhKD3dWMC8?g_st=ac"
+      },
+      {
+        "code": "QCD7",
+        "name": "امازون مراسي",
+        "area": "Marassi",
+        "map": "https://www.google.com/maps?q=30.97597,28.72558"
+      },
+      {
+        "code": "QCE1",
+        "name": "امازون سيدي حنيش",
+        "area": "Sidi Heneish",
+        "map": "https://www.google.com/maps?q=31.16647,27.61191"
+      },
+      {
+        "code": "HCD2",
+        "name": "امازون مخزن التجمع",
+        "area": "Frozen New Cairo",
+        "map": "https://maps.app.goo.gl/pzwfz1CHx5sqf6sN6"
+      },
+      {
+        "code": "HCD3",
+        "name": "امازون مخزن طريق السويس",
+        "area": "Ambient Room Temp Suez Road",
+        "map": "https://maps.app.goo.gl/SxaQUcb4GVLCgBE28"
+      },
+      {
+        "code": "HCD4",
+        "name": "امازون مخزن العبور",
+        "area": "Chilled Obour",
+        "map": "https://maps.app.goo.gl/Z6cwG1oPeY85jmw87"
       }
     ]
   },
