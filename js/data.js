@@ -698,7 +698,7 @@ const LOCATIONS_DATA = [
         "code": "07-018",
         "name": "سبينس طنطا",
         "area": "",
-        "map": "https://maps.apple/p/VQH1P1fLt_y.bV"
+        "map": "https://maps.app.goo.gl/RD2EDbRrTiCxyfe87"
       },
       {
         "code": "07-019",
