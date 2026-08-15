@@ -705,6 +705,18 @@ const LOCATIONS_DATA = [
         "name": "سبينس مارينا",
         "area": "",
         "map": "https://maps.app.goo.gl/JbrwSCZUJcsR9CbQA"
+      },
+      {
+        "code": "07-020",
+        "name": "سبينس المقطم",
+        "area": "",
+        "map": "https://share.google/v0jduu1hAk4GAJ7Lo"
+      },
+      {
+        "code": "07-021",
+        "name": "سبينس توكانو",
+        "area": "",
+        "map": "https://maps.app.goo.gl/pjgiB9bJrkFiM3K58"
       }
     ]
   },
@@ -855,6 +867,12 @@ const LOCATIONS_DATA = [
         "name": "بندة العبور",
         "area": "",
         "map": "https://share.google/s1pS2lnHndsfcmPQ2 "
+      },
+      {
+        "code": "10-006",
+        "name": "بندة الاستاد",
+        "area": "",
+        "map": "https://maps.app.goo.gl/VnTv4wLL72zjENTC9?g_st=aw"
       }
     ]
   },
