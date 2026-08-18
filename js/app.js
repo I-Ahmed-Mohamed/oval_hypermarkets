@@ -1,6 +1,6 @@
 const state = {
-  query: "",
-  filter: "all",
+  query: sessionStorage.getItem("saved_query") || "",
+  filter: sessionStorage.getItem("saved_filter") || "all",
   opened: new Set(),
   favorites: new Set(JSON.parse(localStorage.getItem("fav_locations") || "[]")),
   recent: JSON.parse(localStorage.getItem("recent_locations") || "[]")
@@ -128,6 +128,7 @@ function render(){
 
 input.addEventListener("input", e => {
   state.query = e.target.value;
+  sessionStorage.setItem("saved_query", state.query);
   render();
 });
 
@@ -139,6 +140,7 @@ $("#quickFilters").addEventListener("click", e => {
   document.querySelectorAll("#quickFilters button").forEach(b => b.classList.remove("active"));
   btn.classList.add("active");
   state.filter = btn.dataset.filter;
+  sessionStorage.setItem("saved_filter", state.filter);
   render();
 });
 
@@ -189,12 +191,23 @@ function openBottomSheet(clientName) {
   
   bottomSheetOverlay.classList.add("show");
   document.body.classList.add("modal-open");
+  history.pushState({ sheet: clientName }, "", "#branch");
 }
 
 function closeBottomSheet() {
   bottomSheetOverlay.classList.remove("show");
   document.body.classList.remove("modal-open");
+  if (location.hash === "#branch") {
+    history.back();
+  }
 }
+
+window.addEventListener("popstate", () => {
+  if (bottomSheetOverlay.classList.contains("show")) {
+    bottomSheetOverlay.classList.remove("show");
+    document.body.classList.remove("modal-open");
+  }
+});
 
 closeSheetBtn.addEventListener("click", closeBottomSheet);
 bottomSheetOverlay.addEventListener("click", e => {
@@ -254,6 +267,14 @@ $("#themeBtn").addEventListener("click", () => {
 });
 
 buildClientFilters();
+
+input.value = state.query;
+const activeFilterBtn = document.querySelector(`#quickFilters button[data-filter="${state.filter}"]`);
+if(activeFilterBtn) {
+  document.querySelectorAll("#quickFilters button").forEach(b => b.classList.remove("active"));
+  activeFilterBtn.classList.add("active");
+}
+
 render();
 
 const imageModal = $("#imageModal");
