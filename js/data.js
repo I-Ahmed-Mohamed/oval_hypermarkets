@@ -207,6 +207,12 @@ const LOCATIONS_DATA = [
         "name": "امازون مخزن العبور",
         "area": "Chilled Obour",
         "map": "https://maps.app.goo.gl/Z6cwG1oPeY85jmw87"
+      },
+      {
+        "code": "QCC5",
+        "name": "امازون",
+        "area": "",
+        "map": "https://maps.app.goo.gl/WN54v171k5eADhk9A"
       }
     ]
   },
