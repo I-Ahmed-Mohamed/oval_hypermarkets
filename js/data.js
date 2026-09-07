@@ -213,6 +213,12 @@ const LOCATIONS_DATA = [
         "name": "امازون",
         "area": "",
         "map": "https://maps.app.goo.gl/WN54v171k5eADhk9A"
+      },
+      {
+        "code": "QCE5",
+        "name": "امازون اسكندرية-جليم",
+        "area": "اسكندرية-جليم",
+        "map": "https://maps.app.goo.gl/2xYTkbCweFob6UjC6"
       }
     ]
   },
