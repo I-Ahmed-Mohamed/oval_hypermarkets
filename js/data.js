@@ -1101,6 +1101,12 @@ const LOCATIONS_DATA = [
         "name": "وكالة المنصورة بلقاس",
         "area": "",
         "map": "https://share.google/Zd2aBix9ZseUeN5fW"
+      },
+      {
+        "code": "16-007",
+        "name": "وكالة المنصورة اجا",
+        "area": "",
+        "map": "https://maps.app.goo.gl/8jNScx1SLmZCoSbv7"
       }
     ]
   }
