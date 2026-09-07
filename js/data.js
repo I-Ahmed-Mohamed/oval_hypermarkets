@@ -1107,6 +1107,12 @@ const LOCATIONS_DATA = [
         "name": "وكالة المنصورة اجا",
         "area": "",
         "map": "https://maps.app.goo.gl/8jNScx1SLmZCoSbv7"
+      },
+      {
+        "code": "16-008",
+        "name": "وكالة المنصورة شربين",
+        "area": "",
+        "map": "https://maps.app.goo.gl/ckzLmYKeQZJv9xut8"
       }
     ]
   }
