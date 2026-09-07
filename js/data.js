@@ -1115,5 +1115,17 @@ const LOCATIONS_DATA = [
         "map": "https://maps.app.goo.gl/ckzLmYKeQZJv9xut8"
       }
     ]
+  },
+  {
+    "client": "كازيون",
+    "type": "كازيون",
+    "branches": [
+      {
+        "code": "17-001",
+        "name": "كازيون اكتوبر الجديد",
+        "area": "",
+        "map": "https://maps.google.com/maps?q=29.895080380500374%2C30.87482213973999&z=17&hl=ar"
+      }
+    ]
   }
 ];
