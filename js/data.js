@@ -1125,6 +1125,12 @@ const LOCATIONS_DATA = [
         "name": "وكالة المنصورة حي الجامعة",
         "area": "",
         "map": "https://share.google/XFiRfvbxUNJhvudJ3"
+      },
+      {
+        "code": "16-011",
+        "name": "وكالة المنصورة الامام",
+        "area": "",
+        "map": "https://share.google/WOsI8fc6xEYyDFhZv"
       }
     ]
   },
