@@ -1119,6 +1119,12 @@ const LOCATIONS_DATA = [
         "name": "وكالة المنصورة المشاية",
         "area": "",
         "map": "https://maps.app.goo.gl/ZDSiy34JwkxmVYUS9"
+      },
+      {
+        "code": "16-010",
+        "name": "وكالة المنصورة حي الجامعة",
+        "area": "",
+        "map": "https://share.google/XFiRfvbxUNJhvudJ3"
       }
     ]
   },
