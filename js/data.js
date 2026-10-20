@@ -1070,7 +1070,7 @@ const LOCATIONS_DATA = [
         "code": "16-001",
         "name": "وكالة المنصورة الهايبر",
         "area": "",
-        "map": "https://share.google/PQYYvqHyw7VcBi75e"
+        "map": "https://maps.app.goo.gl/Y9tMtcU7srpnT1xw9"
       },
       {
         "code": "16-002",
@@ -1113,6 +1113,12 @@ const LOCATIONS_DATA = [
         "name": "وكالة المنصورة شربين",
         "area": "",
         "map": "https://maps.app.goo.gl/ckzLmYKeQZJv9xut8"
+      },
+      {
+        "code": "16-009",
+        "name": "وكالة المنصورة المشاية",
+        "area": "",
+        "map": "https://maps.app.goo.gl/ZDSiy34JwkxmVYUS9"
       }
     ]
   },
